@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { useToast } from "@/components/ui/use-toast";
+import { Button as AntButton } from 'antd';
 
 const Step2 = ({
   setCurrent,
@@ -11,6 +13,10 @@ const Step2 = ({
   sdrs1,
   sheetName
 }) => {
+  const [loading,setLoading] = useState(false)
+  const { toast } = useToast();
+
+
   useEffect(() => {
     const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
     const dataArray = Object.values(aggregatedComparison);
@@ -24,13 +30,36 @@ const Step2 = ({
       });
   }, []);
 
-  const submitToForm = () => {
-      // const data = [
-      //   [0.9841862818154274, 0.9999479139537576],
-      //   [0.9235212251992672, 0.9999754891908919]
-      // ]
-      axios.post('api/sheets',{ris,"version":1,sheetName})
-  }
+  const submitToForm = async () => {
+    setLoading(true);
+    console.log("loading", loading);
+    const currentDate = new Date().toLocaleString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      hour12: true,
+    });
+
+    try {
+      await axios.post('api/sheets', { ris, "version": 1, sheetName });
+      toast({
+        title: "Data Added to Google Sheets!",
+        description: currentDate,
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error Occurred in Google Sheets!",
+        description: currentDate,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="">
@@ -52,7 +81,7 @@ const Step2 = ({
       <div className="flex gap-2 mt-5">
         <Button onClick={() => setCurrent(6)}>Prev</Button>
         <Button onClick={() => setCurrent(8)}>Continue</Button>
-        <Button variant='outline' onClick={submitToForm}>Google Sheet</Button>
+        <AntButton loading={loading} size="large" onClick={submitToForm}>Google Sheet</AntButton>
       </div>
     </div>
   );

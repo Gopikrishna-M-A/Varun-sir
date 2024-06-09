@@ -7,8 +7,8 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Varunsir",
-  description: "Varunsir",
+  title: "Decision Support System",
+  description: "A comprehensive decision support system with multiple evaluation steps and criteria analysis.",
 };
 
 export default function RootLayout({ children }) {
