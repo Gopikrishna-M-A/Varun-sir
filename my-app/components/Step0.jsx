@@ -15,6 +15,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
+
 const formatDate = (isoDate) => {
   const date = new Date(isoDate);
 
@@ -52,11 +53,14 @@ const Step0 = ({
   const [showDialog, setShowDialog] = useState(false); // Track whether to show the continue confirmation dialog
   const { toast } = useToast();
 
+
   useEffect(() => {
     if (FFNWeights) {
       setWeights(FFNWeights);
     }
   }, [FFNWeights]);
+
+
 
   const getTableData = () => {
     axios.get("/api/sample").then((res) => {
@@ -194,7 +198,7 @@ const Step0 = ({
 
               <AlertDialog>
                 <AlertDialogTrigger className="text-red-600 hover:text-red-400 bg-red-100 rounded-full h-7 w-7 flex justify-center items-center">
-                  <span  className="material-symbols-outlined">remove</span>
+                  <span className="material-symbols-outlined">remove</span>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
                   <AlertDialogHeader>
@@ -219,6 +223,8 @@ const Step0 = ({
             </div>
           ))}
         </div>
+
+       
       </div>
 
       <Button onClick={continueToNextStep} className="mt-10">
