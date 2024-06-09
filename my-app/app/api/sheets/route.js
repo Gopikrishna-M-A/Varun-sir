@@ -63,6 +63,7 @@ export async function POST(request) {
     const startColumn = version === 1 ? "A" : version === 2 ? "E" : "A";
     // const range = `${startColumn}2`;
     const range = `${sheetName}!${startColumn}3`;
+    console.log("range",range);
 
     const headers = [
       { range: `${sheetName}!A1`, value: "PROJECT MANAGEMENT STEPS" },
@@ -81,13 +82,15 @@ export async function POST(request) {
         values: prependedData,
       },
     });
-
+    console.log("response",response);
     // Update headers
     const updateRequests = headers.map((header) => ({
       range: header.range,
       values: [[header.value]],
     }));
+    console.log("updateRequests",updateRequests
 
+    );
     for (const updateRequest of updateRequests) {
       await sheets.spreadsheets.values.update({
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
