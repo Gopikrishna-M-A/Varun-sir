@@ -194,7 +194,7 @@ def calculate_score_values(matrix):
 
 
 app = Flask(__name__)
-cors = CORS(app,origins = "http://localhost:3000",
+cors = CORS(app,origins = "https://prioritization-platform.vercel.app",
                 methods=["GET", "POST", "PUT", "DELETE"])
 
 # GET route to fetch all todos
