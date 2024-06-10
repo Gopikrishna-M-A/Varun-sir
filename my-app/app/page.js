@@ -5,6 +5,7 @@ import taxi from "/public/Frame 2.png";
 import train from "/public/Frame 3.png";
 import aircraft from "/public/Frame 4.png";
 import bike from "/public/Frame 5.png";
+import background from '/public/b.jpg'
 import { Steps } from "antd";
 
 const steps = [
@@ -46,19 +47,26 @@ const items = steps.map((item) => ({
 import Link from "next/link";
 function page() {
   return (
-    <div className="w-full flex flex-col h-screen  p-36 gap-10">
-      <div className="flex w-full">
-        <div className="flex flex-col gap-2 h-full">
-          <div className="hero-text text-3xl text-center text-gray-700 flex justify-center' items-center">
-          <div className="w-3/4 m-auto">Coherent Framework for Integrating Systems Engineering And Project Management Using Quality Function Deployment</div>
-
-          </div>
-          <div className="hero-desc text-center text-lg text-gray-500">
+    <div className="w-full flex flex-col px-32 h-screen justify-center bg-gray-100">
+      <div className="flex w-full justify-center items-start border rounded p-10 shadow-md bg-white">
+        <div className="flex flex-col gap-2 w-1/2 h-full justify-between">
+          <div className="hero-text text-3xl text-gray-700 mt-10">
+         <div className="text-5xl">Coherent Framework for Integrating Systems Engineering And Project Management Using Quality Function Deployment</div>
+          <div className="hero-desc text-lg text-gray-500 mt-5">
           Research Scholar - Abdulaziz Halawani
           </div>
-          <Link href="/calculate" className="mt-5 m-auto">
-            <Button className="w-96" size="lg">Start</Button>
+          </div>
+         
+          <Link href="/calculate" className="mt-5">
+            <Button className="w-3/4" size="lg">Start</Button>
           </Link>
+        </div>
+
+        <div>
+          <Image 
+          src={background}
+          width={500}
+          />
         </div>
 
         {/* <div className="w-1/2 flex relative h-full items-center justify-center mt-20">

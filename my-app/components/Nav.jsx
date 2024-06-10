@@ -25,10 +25,11 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 p-5 pr-32 pl-24 bg-white">
+    <div className="fixed top-0 left-0 right-0 z-10 p-5 px-32 bg-white">
       <div className="flex justify-between items-center">
-        <Link href="/" className="font-bold cursor-pointer">
-          <span className="material-symbols-outlined">home</span>
+        <Link href="/" className="font-bold cursor-pointer hover:text-gray-700">
+          {/* <span className="material-symbols-outlined">home</span> */}
+          <span>Home</span>
         </Link>
         <div className="flex gap-5 justify-end">
           <div>
