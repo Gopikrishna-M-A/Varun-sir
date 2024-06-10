@@ -42,7 +42,7 @@ const Nav = () => {
               </Tag>
             )}
           </div>
-          <Link href="https://www.linkedin.com/in/gopikrishna6003">
+          {/* <Link href="https://www.linkedin.com/in/gopikrishna6003">
             <LinkedinFilled
               className=" cursor-pointer hover:-translate-y-1 transition-all"
               style={{ fontSize: "24px", color: "#000" }}
@@ -53,7 +53,7 @@ const Nav = () => {
               className=" cursor-pointer hover:-translate-y-1 transition-all"
               style={{ fontSize: "24px", color: "#000" }}
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

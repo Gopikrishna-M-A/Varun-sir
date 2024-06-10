@@ -48,22 +48,20 @@ function page() {
   return (
     <div className="w-full flex flex-col h-screen  p-36 gap-10">
       <div className="flex w-full">
-        <div className="flex flex-col gap-2 w-1/2 h-full">
-          <div className="hero-text text-3xl text-gray-700">
-          <span className="">C</span>oherent Framework for <br />{" "}
-          <span className="">I</span>ntegrating Systems Engineering <br />
-          <span className="">A</span>nd Project Management Using Quality Function Deployment
+        <div className="flex flex-col gap-2 h-full">
+          <div className="hero-text text-3xl text-center text-gray-700 flex justify-center' items-center">
+          <div className="w-3/4 m-auto">Coherent Framework for Integrating Systems Engineering And Project Management Using Quality Function Deployment</div>
 
           </div>
-          <div className="hero-desc text-lg text-gray-500">
+          <div className="hero-desc text-center text-lg text-gray-500">
           Research Scholar - Abdulaziz Halawani
           </div>
-          <Link href="/calculate" className="mt-5">
-            <Button className="w-3/4" size="lg">Calculate</Button>
+          <Link href="/calculate" className="mt-5 m-auto">
+            <Button className="w-96" size="lg">Start</Button>
           </Link>
         </div>
 
-        <div className="w-1/2 flex relative h-full items-center justify-center mt-20">
+        {/* <div className="w-1/2 flex relative h-full items-center justify-center mt-20">
           <Image
             className="absolute right-80 top-0 transform rotate-2 cursor-pointer tras hover:translate-y-10 transition-all ease-in-out"
             src={taxi}
@@ -88,10 +86,10 @@ function page() {
             alt="card"
             width={176}
           />
-        </div>
+        </div> */}
       </div>
 
-      <div className="w-full flex  justify-between items-end">
+      {/* <div className="w-full flex  justify-between items-end">
       <div className=" text-muted-foreground mt-10 w-1/2">
       Follow the 10-step process for a comprehensive report on sustainability goals and passenger requirements
       <Steps
@@ -103,7 +101,7 @@ function page() {
       />
       </div>
       <Link href="mailto:gopikrishna6003@gmail.com"><Button variant='outline'>Contact Support</Button></Link>
-      </div>
+      </div> */}
 
     </div>
   );
