@@ -48,18 +48,18 @@ function page() {
   return (
     <div className="w-full flex flex-col h-screen  p-36 gap-10">
       <div className="flex w-full">
-        <div className="flex flex-col gap-5 w-1/2 h-full">
-          <div className="hero-text">
-            <span className="text-red-500">N</span>avigate Your <br />{" "}
-            <span className="text-yellow-500">S</span>ustainable Future <br />
-            <span className="text-green-500">E</span>mpowering Mobility
+        <div className="flex flex-col gap-2 w-1/2 h-full">
+          <div className="hero-text text-3xl text-gray-700">
+          <span className="">C</span>oherent Framework for <br />{" "}
+          <span className="">I</span>ntegrating Systems Engineering <br />
+          <span className="">A</span>nd Project Management Using Quality Function Deployment
+
           </div>
-          <div className="hero-desc">
-            Elevate your mobility choices sustainably with <br /> our
-            prioritization platform.
+          <div className="hero-desc text-lg text-gray-500">
+          Research Scholar - Abdulaziz Halawani
           </div>
-          <Link href="/calculate">
-            <Button className="w-96 h-12 text-xl">Calculate</Button>
+          <Link href="/calculate" className="mt-5">
+            <Button className="w-3/4" size="lg">Calculate</Button>
           </Link>
         </div>
 
