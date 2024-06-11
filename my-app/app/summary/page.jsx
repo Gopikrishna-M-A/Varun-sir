@@ -4,7 +4,7 @@ import { Button, Result } from "antd";
 
 const App = () => {
   const handleOpenGoogleSheet = () => {
-    window.open('https://docs.google.com/spreadsheets/d/1mfXoipiOGVv1yZLJJUklCKM059fIaYA8vsOGe5eqz5A/edit#gid=155723463', '_blank');
+    window.open('https://docs.google.com/spreadsheets/d/1KoZqDN7lw_7lXvfZf74vv3PAfaj5yxcUJnGV-F8AzhA/edit?usp=sharing', '_blank');
   };
 
   return (
