@@ -1,118 +1,64 @@
-"use client";
-import { Button } from "../components/ui/button";
-import Image from "next/image";
-import taxi from "/public/Frame 2.png";
-import train from "/public/Frame 3.png";
-import aircraft from "/public/Frame 4.png";
-import bike from "/public/Frame 5.png";
-import background from '/public/b.jpg'
-import { Steps } from "antd";
+"use client"
+import { Button } from "../components/ui/button"
+import Image from "next/image"
+import background from "/public/bg.jpg"
 
-const steps = [
-  {
-    title: "Step 1",
-    content: "content",
-  },
-  {
-    title: "Step 2",
-    content: "content",
-  },
-  {
-    title: "Step 3",
-    content: "content",
-  },
-  {
-    title: "Step 4",
-    content: "content",
-  },
-  {
-    title: "Step 5",
-    content: "content",
-  },
-  {
-    title: "Step 6",
-    content: "content",
-  },
-  {
-    title: "Step 7",
-    content: "content",
-  }
-];
-
-const items = steps.map((item) => ({
-  key: item.title,
-  title: item.title,
-}));
-
-import Link from "next/link";
+import Link from "next/link"
 function page() {
   return (
-    <div className="w-full flex flex-col px-32 h-screen justify-center bg-gray-100">
-      <div className="flex w-full justify-center items-start border rounded p-10 shadow-md bg-white">
-        <div className="flex flex-col gap-2 w-1/2 h-full justify-between">
-          <div className="hero-text text-3xl text-gray-700 mt-10">
-         <div className="text-5xl">Coherent Framework for Integrating Systems Engineering And Project Management Using Quality Function Deployment</div>
-          <div className="hero-desc text-lg text-gray-500 mt-5">
-          Research Scholar - Abdulaziz Halawani
+    <div className='flex flex-col'>
+      <main className='flex-1'>
+        <section className='w-full py-16'>
+          <div className='container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10'>
+            <div className='space-y-4'>
+              <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
+                Coherent Framework for Integrating Systems Engineering And
+                Project Management Using Quality Function Deployment
+              </h1>
+              <p className='max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
+                Research Scholar - Abdulaziz Halawani
+              </p>
+              <div className='flex flex-col gap-2 min-[400px]:flex-row'>
+                <Link
+                  href='/calculate'
+                  className='inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+                  prefetch={false}>
+                  Start
+                </Link>
+              
+              </div>
+            </div>
+            <Image
+              src={background}
+              width='640'
+              height='480'
+              alt='Survey and Analytics'
+              className='mx-auto aspect-[4/3] overflow-hidden rounded-xl object-contain object-center sm:w-full'
+            />
           </div>
-          </div>
-         
-          <Link href="/calculate" className="mt-5">
-            <Button className="w-3/4" size="lg">Start</Button>
+        </section>
+      </main>
+      <footer className='flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t'>
+        <p className='text-xs text-muted-foreground'>
+          &copy; 2024 All rights reserved.
+        </p>
+        <nav className='sm:ml-auto flex gap-4 sm:gap-6'>
+          <Link
+            href='#'
+            className='text-xs hover:underline underline-offset-4'
+            prefetch={false}>
+            Terms of Service
           </Link>
-        </div>
-
-        <div>
-          <Image 
-          src={background}
-          width={500}
-          />
-        </div>
-
-        {/* <div className="w-1/2 flex relative h-full items-center justify-center mt-20">
-          <Image
-            className="absolute right-80 top-0 transform rotate-2 cursor-pointer tras hover:translate-y-10 transition-all ease-in-out"
-            src={taxi}
-            alt="card"
-            width={176}
-          />
-          <Image
-            className="absolute right-52 top-7 transform rotate-2 cursor-pointer hover:translate-y-3 transition-all ease-in-out"
-            src={train}
-            alt="card"
-            width={176}
-          />
-          <Image
-            className="absolute right-28 top-0 transform rotate-12 cursor-pointer hover:translate-y-3 transition-all ease-in-out"
-            src={aircraft}
-            alt="card"
-            width={176}
-          />
-          <Image
-            className="absolute right-0 top-9 transform -rotate-12 cursor-pointer hover:translate-y-3 transition-all ease-in-out"
-            src={bike}
-            alt="card"
-            width={176}
-          />
-        </div> */}
-      </div>
-
-      {/* <div className="w-full flex  justify-between items-end">
-      <div className=" text-muted-foreground mt-10 w-1/2">
-      Follow the 10-step process for a comprehensive report on sustainability goals and passenger requirements
-      <Steps
-        className="my-2.5 w-full"
-        type="inline"
-        current={0}
-        items={items}
-
-      />
-      </div>
-      <Link href="mailto:gopikrishna6003@gmail.com"><Button variant='outline'>Contact Support</Button></Link>
-      </div> */}
-
+          <Link
+            href='#'
+            className='text-xs hover:underline underline-offset-4'
+            prefetch={false}>
+            Privacy
+          </Link>
+        </nav>
+      </footer>
     </div>
-  );
+  )
 }
 
-export default page;
+export default page

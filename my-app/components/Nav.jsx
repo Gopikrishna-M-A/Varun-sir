@@ -25,14 +25,12 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 p-5 px-32 bg-white">
-      <div className="flex justify-between items-center">
-        <Link href="/" className="font-bold cursor-pointer hover:text-gray-700">
-          {/* <span className="material-symbols-outlined">home</span> */}
-          <span>Home</span>
+    <header className="px-4 lg:px-6 h-14 flex items-center">
+        <Link href="/" className="flex items-center justify-center">
+          <MountainIcon className="h-6 w-6" />
         </Link>
-        <div className="flex gap-5 justify-end">
-          <div>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <div>
             {serverStatus ? (
               <Tag bordered={false} color="success">
                 Server running
@@ -43,22 +41,28 @@ const Nav = () => {
               </Tag>
             )}
           </div>
-          {/* <Link href="https://www.linkedin.com/in/gopikrishna6003">
-            <LinkedinFilled
-              className=" cursor-pointer hover:-translate-y-1 transition-all"
-              style={{ fontSize: "24px", color: "#000" }}
-            />
-          </Link>
-          <Link href="https://github.com/Gopikrishna-M-A">
-            <GithubOutlined
-              className=" cursor-pointer hover:-translate-y-1 transition-all"
-              style={{ fontSize: "24px", color: "#000" }}
-            />
-          </Link> */}
-        </div>
-      </div>
-    </div>
+        </nav>
+      </header>
   );
 };
 
 export default Nav;
+
+
+function MountainIcon(props) {
+  return (
+    (<svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    </svg>)
+  );
+}
